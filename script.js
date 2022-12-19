@@ -87,3 +87,15 @@ var finances = [
     ['Feb-2017', 671099]
     ];
 
+var financesCount = finances.length     //The total number of data entries in the finances array
+var financesTotal = 0   //Variablet to hold the total of all profits/losses
+
+
+//  For loop to add the total profit/losses for every calendar month in the finances array
+for (let i = 0; i < finances.length; i++) {
+    financesTotal = financesTotal + finances[i][1]
+}
+
+
+
+console.log(financesCount)
