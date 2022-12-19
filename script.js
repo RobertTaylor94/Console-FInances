@@ -113,11 +113,17 @@ var finances = [
     monthlyChangeArray.sort((a, b) => {
         return b[1] - a[1]
     })
+
+    greatestIncrease = monthlyChangeArray[0]
+    greatestDecrease = monthlyChangeArray[monthlyChangeArray.length - 1]
     
-    console.log()
     
-    console.log(financesCount)
-    console.log(financesTotal)
-    console.log(monthlyAverageChange)
-    console.log(monthlyChangeArray[0])
-    console.log(monthlyChangeArray[monthlyChangeArray.length - 1])
+    console.log(`
+    Financial Analysis
+    ---------------------------
+    Total Months: $${financesCount}
+    Total: $${financesTotal}
+    Average Change: $${monthlyAverageChange}
+    Greatest Increase in Profits: ${greatestIncrease[0]} ($${greatestIncrease[1]})
+    Greatest Decrease in Profits: ${greatestDecrease[0]} ($${greatestDecrease[1]})
+    `)
