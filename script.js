@@ -89,11 +89,20 @@ var finances = [
 
 var financesCount = finances.length     //The total number of data entries in the finances array
 var financesTotal = 0   //Variablet to hold the total of all profits/losses
+var monthlyChangeNum = 0
+var monthlyChangeArray = []
 
 
 //  For loop to add the total profit/losses for every calendar month in the finances array
 for (let i = 0; i < finances.length; i++) {
     financesTotal = financesTotal + finances[i][1]
+}
+
+//  Keeps a running total of the monthly change in profit/loss
+for (let n = 0; n < financesCount - 1; n++) {
+    var changeTemp = (finances[n+1][1] - finances[n][1])
+    monthlyChangeNum = monthlyChangeNum + changeTemp
+    monthlyChangeArray.push([finances[n+1][0], changeTemp])
 }
 
 
