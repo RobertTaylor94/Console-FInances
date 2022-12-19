@@ -87,28 +87,37 @@ var finances = [
     ['Feb-2017', 671099]
     ];
 
-var financesCount = finances.length     //The total number of data entries in the finances array
-var financesTotal = 0   //Variablet to hold the total of all profits/losses
-var monthlyChangeNum = 0
-var monthlyChangeArray = []
-var monthlyAverageChange = 0
-
-
-//  For loop to add the total profit/losses for every calendar month in the finances array
-for (let i = 0; i < finances.length; i++) {
-    financesTotal = financesTotal + finances[i][1]
-}
-
-//  Keeps a running total of the monthly change in profit/loss
-for (let n = 0; n < financesCount - 1; n++) {
-    var changeTemp = (finances[n+1][1] - finances[n][1])
-    monthlyChangeNum = monthlyChangeNum + changeTemp
-    monthlyChangeArray.push([finances[n+1][0], changeTemp])
-}
-
-//  Generates an average monthly change in profit/loss
-monthlyAverageChange = monthlyChangeNum/(financesCount-1)
-
-
-
-console.log(financesCount)
+    var financesCount = finances.length     //The total number of data entries in the finances array
+    var financesTotal = 0   //Variablet to hold the total of all profits/losses
+    var monthlyChangeNum = 0
+    var monthlyChangeArray = []
+    var monthlyAverageChange = 0
+    var greatestIncrease = []
+    var greatestDecrease = []
+    
+    //  For loop to add the total profit/losses for every calendar month in the finances array
+    for (let i = 0; i < finances.length; i++) {
+        financesTotal = financesTotal + finances[i][1]
+    }
+    
+    //  Keeps a running total of the monthly change in profit/loss
+    for (let n = 0; n < financesCount - 1; n++) {
+        var changeTemp = (finances[n+1][1] - finances[n][1])
+        monthlyChangeNum = monthlyChangeNum + changeTemp
+        monthlyChangeArray.push([finances[n+1][0], changeTemp])
+    }
+    
+    //  Generates an average monthly change in profit/loss
+    monthlyAverageChange = monthlyChangeNum/(financesCount-1)
+    
+    monthlyChangeArray.sort((a, b) => {
+        return b[1] - a[1]
+    })
+    
+    console.log()
+    
+    console.log(financesCount)
+    console.log(financesTotal)
+    console.log(monthlyAverageChange)
+    console.log(monthlyChangeArray[0])
+    console.log(monthlyChangeArray[monthlyChangeArray.length - 1])
