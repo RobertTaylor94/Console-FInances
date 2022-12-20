@@ -117,13 +117,21 @@ var finances = [
     greatestIncrease = monthlyChangeArray[0]
     greatestDecrease = monthlyChangeArray[monthlyChangeArray.length - 1]
     
-    
+    let formatter = new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+    })
+
     console.log(`
     Financial Analysis
     ---------------------------
-    Total Months: $${financesCount}
-    Total: $${financesTotal}
-    Average Change: $${monthlyAverageChange}
+    Total Months: ${financesCount}
+    Total: ${formatter.format(financesTotal)}
+    Average Change: $${monthlyAverageChange.toFixed(2)}
     Greatest Increase in Profits: ${greatestIncrease[0]} ($${greatestIncrease[1]})
     Greatest Decrease in Profits: ${greatestDecrease[0]} ($${greatestDecrease[1]})
     `)
+
+    // document.getElementById('totalMonths').innerHTML = financesCount
+    // document.getElementById('total').innerHTML = financesTotal
+    // document.getElementById('avChange').innerHTML = monthlyAverageChange
