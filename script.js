@@ -114,9 +114,11 @@ var finances = [
         return b[1] - a[1]
     })
 
+    // Extracts greatets increase in profit and decrease in profit from changes array
     greatestIncrease = monthlyChangeArray[0]
     greatestDecrease = monthlyChangeArray[monthlyChangeArray.length - 1]
     
+    // Used to convert Number to currency format
     let formatter = new Intl.NumberFormat('en-US', {
         style: 'currency',
         currency: 'USD',
@@ -132,6 +134,7 @@ var finances = [
     Greatest Decrease in Profits: ${greatestDecrease[0]} ($${greatestDecrease[1]})
     `)
 
+    // Push values for display in HTML
     document.getElementById('totalMonths').innerHTML = financesCount
     document.getElementById('total').innerHTML = formatter.format(financesTotal)
     document.getElementById('averageChange').innerHTML = formatter.format(monthlyAverageChange.toFixed(2))
