@@ -127,11 +127,13 @@ var finances = [
     ---------------------------
     Total Months: ${financesCount}
     Total: ${formatter.format(financesTotal)}
-    Average Change: $${monthlyAverageChange.toFixed(2)}
+    Average Change: $${formatter.format(monthlyAverageChange.toFixed(2))}
     Greatest Increase in Profits: ${greatestIncrease[0]} ($${greatestIncrease[1]})
     Greatest Decrease in Profits: ${greatestDecrease[0]} ($${greatestDecrease[1]})
     `)
 
-    // document.getElementById('totalMonths').innerHTML = financesCount
-    // document.getElementById('total').innerHTML = financesTotal
-    // document.getElementById('avChange').innerHTML = monthlyAverageChange
+    document.getElementById('totalMonths').innerHTML = financesCount
+    document.getElementById('total').innerHTML = formatter.format(financesTotal)
+    document.getElementById('averageChange').innerHTML = formatter.format(monthlyAverageChange.toFixed(2))
+    document.getElementById('greatestIncrease').innerHTML = `${greatestIncrease[0]} (${formatter.format(greatestIncrease[1])})`
+    document.getElementById('greatestDecrease').innerHTML = `${greatestDecrease[0]} (${formatter.format(greatestDecrease[1])})`
