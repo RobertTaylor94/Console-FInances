@@ -1,0 +1,11 @@
+.terminal {
+    color:rgb(6, 181, 6);
+}
+
+.terminal h2 {
+    text-decoration: underline;
+}
+
+.container {
+    background-color: black;
+}
