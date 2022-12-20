@@ -1,3 +1,11 @@
+body {
+    background-color: black;
+}
+
+.jumbotron {
+    background-color: blanchedalmond;
+}
+
 .terminal {
     color:rgb(6, 181, 6);
 }
