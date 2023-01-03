@@ -10,4 +10,4 @@ For our introduction to JavaScript, we were given an array of data and asked to 
 
 After I had finished the mathematics and printed all the required outputs to the console I started learning how to integrate the JS variables with HTML and CSS. I researched using element ID's and innerHTML to send the values in the variables to be displayed on the HTML page.
 
-<img src="./Assets/Screenshots/site.png" width="750" height="400">
+<img src="./Assets/Screenshots/site.png" width="750" height="400">  
